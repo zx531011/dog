@@ -1,18 +1,173 @@
+/* 主要 */
 .main {
     width: 80%;
     margin: 0 auto;
 }
+
+/* 盒子 - 圖片、標題、內文與按鈕 */
 .box {
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-gap: 10px 10px;
     margin: 60px 0;
 }
 .box .picture img {
     width: 100%;
 }
 .box .picture img[src="dog1.jpg"] {
-    box-shadow: 0 5px 7px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
     border: 18px solid white;
     width: 60%;
-    transform: rotate(15deg)
+    transform: rotate(15deg);
+}
+
+/* 價格 */
+.priceBox {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.priceBox h2 {
+    margin: 30px 0;
+}
+.priceBox h3 {
+    margin: 20px 0;
+}
+.priceBox ul li {
+    margin: 10px 0;
+}
+.priceBox a {
+    margin: 10px 0;
+    background-color: #333;
+}
+.priceBox div {
+    background-color: rgb(200, 50, 50 );
+    color: white;
+    text-align: center;
+    padding: 50px 30px;
+}
+.priceBox div ul {
+    list-style-image: url(check.png);
+    list-style-position: inside;
+    text-align: left;
+}
+.priceBox .premium {
+    background-color: rgb(0, 0, 0)
+}
+.priceBox .premium a {
+    background-color:rgb(150, 50, 50);
+}
+.priceBox .basic ul li:nth-child(n+3),.priceBox .premium ul li:nth-child(n+5) {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* 聯絡我們 */
+.contactbox {
+    background-color: #eee;
+}    
+.title {
+    text-align: center;
+    margin: 30px 0;
+}
+.contact {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.contact input {
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+.contact label {
+    display: block;
+    margin: 10px 0;
+}
+.contact textarea {
+    width: 100%;
+    border-radius: 10px;
+}
+.contact input[type="submit"] {
+    width: 120px;
+    padding: 0;
+    border-radius: 60px;
+    margin: 30px 0;
+}
+.contact .text {
+    padding: 0 30px;
+}
+
+/* 頁尾 */
+footer {
+    background-color: indianred;
+    color: white;
+    height: 500px;
+}
+footer .footerBox {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+}
+footer .footerBox h3 {
+    margin-top: 30px;
+}
+footer .footerBox p, footer .footerBox a {
+    color: #eee;
+}
+footer .footerBox ul {
+    list-style: none;
+}
+footer .footerBox img {
+    width: 15px;
+    padding: 30px 10px 0 0;
+}
+footer hr {
+    background-color: #ddd;
+    height: 1px;
+    width: 80%;
+    margin: 0 auto;
+}
+footer .copyright {
+    color: #ddd;
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* 調整文字大小 */
+body {
+    font-size: 24px;
+}
+h1 {
+    font-size: 1.5em;
+}
+h2 {
+    font-size: 1.2em;
+}
+h3 {
+    font-size: 1.1em;
+}
+p {
+    font-size: 0.7em;
+    padding: 30px 0;
+    color: #999
+}
+a {
+    font-size: 0.7em;
+}
+.button {
+    display: inline-block;
+    background-color: indianred;
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 40px;
+    color: white;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: #333;
 }

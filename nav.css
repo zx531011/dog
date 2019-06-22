@@ -1,5 +1,5 @@
 * {
-    border: 0.5px solid rgba(0,0,0,0);
+    border: 0.5px solid rgba(0, 0, 0, 0);
     padding: 0;
     margin: 0;
     font-family: 微軟正黑體;
@@ -13,19 +13,16 @@
     padding: 10px 20px;
 }
 .nav .logo {
-    font-size: 30px;
+    font-size: 36px;
 }
-.nav .logo .red {
-    color: indianred;
-} 
-.nav .logo .dog {
-    font-weight: bold;
+.nav .logo .big {
+    font-weight: 900;
 }
 .nav .logo .red, .nav ul li a.red {
     color: indianred;
 }
 .nav a {
-    color:#757575;
+    color: #757575;
     text-decoration: none;
     font-weight: 500;
 }

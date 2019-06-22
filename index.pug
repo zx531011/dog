@@ -1,20 +1,89 @@
-mixin createBox(title, content, button, imgName)
-    .box    
-        .content
+mixin CreateBox(title, content, button, imgName)
+    .box(data-aos="fade-in")
+        .content(data-aos="fade-in" data-aos-duraction="5000" data-aos-delay="500")
             h1=title
             p=content
-            a(href="#")=button
+            a(href="#" class="button")=button
         .picture
-            img(src=imgName)    
+            img(src=imgName)
 
+mixin CreateTitle(title, content)
+    .title
+        h1=title
+        p=content
+
+mixin CreatePrice(className, count, title, price)
+    div(class=className)
+        - for (var i=1; i<= count; i++)
+            img(src="icon.png")
+        h2=title
+        h3=price
+        ul
+            li 寵物講座
+            li 飼料試吃包
+            li 寵物寫真
+            li 寵物旅館
+            li 寵物健康檢查
+        a(href="#" class="button") 購買
 <!DOCTYPE html>
 html(lang="zh")
     head
         meta(charset="UTF-8")
         title DogLife.
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         link(rel="stylesheet", href="index.css")
     body
-         include nav.pug
-         +createBox("標題","內容","按鈕", "dog1.jpg")
-         +createBox("標題","內容","按鈕", "dog2.jpg")
-         +createBox("標題","內容","按鈕", "dog3.jpg")
+        .main
+            include nav.pug
+            +CreateBox("我們愛狗", "我們是一群熱愛狗的人士，為了保護與關懷狗建立此網站。", "詳閱", "dog1.jpg")
+            +CreateTitle("歡迎來到我們的網站", "我們是一群熱愛狗的人士，為了保護與關懷狗建立此網站。")
+            +CreateBox("快樂的寵物", "讓寵物擁有開心的生活空間與品質。", "詳閱", "dog2.jpg")
+            +CreateBox("寵物寫真", "我們提供寵物寫真服務，幫寵物拍得美美的，右邊這隻叫做學長嘉浤。", "詳閱", "dog3.jpg")
+            +CreateTitle("價格表", "我們網站提供三種付費服務，你可以根據自己的需求選擇。")
+            .priceBox
+                +CreatePrice("basic", 1, "基本", "300元")
+                +CreatePrice("premium", 2, "高級", "1000元")
+                +CreatePrice("pro", 3, "進階", "3000元")
+        .contactbox         
+            +CreateTitle("聯絡我們", "如果有任何問題，歡迎來信通知我們。") 
+            .contact
+                form
+                    label(for="name") 姓名
+                    input(type="text" id="name")
+                    label(for="email") 信箱
+                    input(type="email" id="email")
+                    label(for="message") 訊息
+                    textarea(name="message" id="massage" cols="30" rows="10")
+                    input(type="submit" value="確認送出" class="button")
+                .text 
+                    h3 地址
+                    p XXXXXXXXXXX
+                    h3 信箱
+                    p 123@gmail.com
+                    h3 電話
+                    p 09-00000000
+        footer
+            .footerBox
+                .smallBox
+                    h3 關於我們
+                    p 歡迎來到我們的網站", "在我們的網站內，你可以找到跟寵物相關的資訊。
+                .smallBox
+                    h3 快速連結
+                    <ul>
+                        <li><a href="#">首頁</a></li>
+                        <li><a href="#">關於</a></li>
+                        <li><a href="#">價格</a></li>
+                        <li><a href="#">聯絡</a></li>
+                    </ul>
+                .smallBox
+                    h3 追蹤我們
+                    img(src="icon-fb.png", alt="facebook")
+                    img(src="icon-ig.png", alt="instagram")
+                    img(src="icon-yt.png", alt="youtube")
+                    
+            hr( data-aos="fade-right" data-aos-delay="300" data-aos-offset="100")
+            .copyright dog &copy; 2019
+        | <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        | <script>
+        |    AOS.init();
+        | </script>         
